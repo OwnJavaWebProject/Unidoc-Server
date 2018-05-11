@@ -1,9 +1,21 @@
+# 设置端口
 server:
   port: 8082
 
+# 日志级别
+logging:
+  level:
+    com.sixth.unidoc: debug
+
+# 定制启动条
 spring:
   banner:
     location: banner.txt
+  # 关闭模板缓存
+  thymeleaf:
+    cache: false
+
+
 
 #spring:
 #  profiles:
