@@ -68,7 +68,7 @@ public class UserRestController {
     @GetMapping(value = "/Mybatis/{username}/{password}")
     public String insertUser(@PathVariable(value = "username") String username,
                              @PathVariable(value = "password") String password) {
-        User temp = new User(username, password);
+        User temp = new User();
         return userService.insert(temp);
     }
 }
