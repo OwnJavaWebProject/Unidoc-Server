@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service(value = "userService")
 public class UserServiceImpl implements UserService {
@@ -16,9 +17,20 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String insert(User user) {
-        userMapper.insert(user.getUsername(), user.getPassword());
+        userMapper.save(user);
         return "success";
     }
+
+    @Override
+    public boolean isExist(User user) {
+        return userMapper.isExist(user);
+    }
+
+    @Override
+    public Map<String, String> findByUsername(String username) {
+        return userMapper.findByUsername(username);
+    }
+
 
     @Override
     public List<User> getUsersList() {

@@ -36,7 +36,7 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-web-services')
     compile('org.springframework.boot:spring-boot-starter-websocket')
     compile('org.springframework.boot:spring-boot-starter-aop')
-    compile('org.springframework.session:spring-session-jdbc')
+//    compile('org.springframework.session:spring-session-jdbc')
     // 引入swagger 生成api文档
     // https://mvnrepository.com/artifact/io.springfox/springfox-swagger2
     compile('io.springfox:springfox-swagger2:2.8.0')
