@@ -2,9 +2,9 @@
 CREATE SCHEMA `unidoc` DEFAULT CHARACTER SET utf8mb4 ;
 
 -- 创建用户表
-CREATE TABLE `unidoc`.`user` (
+CREATE TABLE `unidoc`.`USER` (
   `Username` CHAR(16) NOT NULL,
-  `passwords` CHAR(16) NULL,
+  `Password` CHAR(16) NULL,
   PRIMARY KEY (`Username`))
 COMMENT = '用户表';
 

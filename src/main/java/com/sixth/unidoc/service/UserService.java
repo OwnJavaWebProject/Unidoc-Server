@@ -1,13 +1,12 @@
 package com.sixth.unidoc.service;
 
-import com.sixth.unidoc.dao.UserRepositroy;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.sixth.unidoc.domain.User;
 
-@Service
-public class UserService {
+import java.util.List;
 
-    @Autowired
-    private UserRepositroy userRepositroy;
+public interface UserService {
 
+    String insert(User user);
+
+    List<User> getUsersList();
 }
