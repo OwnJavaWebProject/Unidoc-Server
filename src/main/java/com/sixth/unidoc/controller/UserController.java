@@ -1,27 +1,35 @@
 package com.sixth.unidoc.controller;
 
-import com.sixth.unidoc.dao.UserRepositroy;
 import com.sixth.unidoc.domain.User;
+import com.sixth.unidoc.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-//@EnableAutoConfiguration
 public class UserController {
 
-    private UserRepositroy userRepositroy;
-
     @Autowired
-    public UserController(UserRepositroy userRepositroy) {
-        this.userRepositroy = userRepositroy;
+    UserMapper userMapper;
+
+    @PostMapping("/register")
+    public String save(@RequestParam("username") String username,
+                       @RequestParam("email") String email,
+                       @RequestParam("password") String password,
+                       @RequestParam("phone") String phone) {
+        userMapper.save(new User(username, email, password, phone));
+        return "redirect:/";
     }
 
-    @GetMapping("/register/{username}/{password}")
-    public void save(@PathVariable("username") String username,
-                     @PathVariable("password") String password) {
-        User insave = new User(username, password);
-        userRepositroy.save(insave);
+    @PostMapping("/login")
+    public String userlogin(@RequestParam("username") String username,
+                            @RequestParam("password") String password) {
+        if (userMapper.findByUsername(username).get("password").equals(password)) {
+            System.out.println("登录成功");
+        } else {
+            return "redirect:/";
+        }
+        return "redirect:/";
     }
 }
