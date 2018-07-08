@@ -1,3 +1,4 @@
+/*
 package com.sixth.unidoc.controller;
 
 import com.sixth.unidoc.domain.User;
@@ -19,10 +20,12 @@ public class UserRestController {
     @Autowired
     private UserService userService;
 
-    /***
-     * 查询所有 用户列表
-     * @return 用户列表
-     */
+    */
+/***
+ * 查询所有 用户列表
+ * @return 用户列表
+ *//*
+
     @ApiOperation("返回所有用户的列表")
     @GetMapping(value = "/")
     public List<User> getUsers() {
@@ -30,11 +33,13 @@ public class UserRestController {
         return r;
     }
 
-    /***
-     * 添加用户
-     * @param user
-     * @return
-     */
+    */
+/***
+ * 添加用户
+ * @param user
+ * @return
+ *//*
+
     @ApiOperation("根据用户名查询用户")
     @PostMapping(value = "/")
     public String postUser(User user) {
@@ -72,3 +77,4 @@ public class UserRestController {
         return userService.insert(temp);
     }
 }
+*/

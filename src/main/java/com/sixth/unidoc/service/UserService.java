@@ -15,4 +15,8 @@ public interface UserService {
     Map<String, String> findByUsername(String username);
 
     List<User> getUsersList();
+
+    User save(User user);
+
+    boolean checkAndlog(String username, String password);
 }

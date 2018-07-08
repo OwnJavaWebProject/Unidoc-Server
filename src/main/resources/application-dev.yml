@@ -14,6 +14,11 @@ spring:
   # 关闭模板缓存
   thymeleaf:
     cache: false
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
 
 
 
